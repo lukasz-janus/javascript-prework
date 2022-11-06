@@ -30,28 +30,29 @@ if(playerInput == '1'){
 
 printMessage('Twój ruch to: ' + playerMove);
 
+let win = 'Ty wygrywasz!';
+let draw = 'Remis';
+let loss = 'Tym razem przegrywasz';
+
 
 if( computerMove == 'kamień' && playerMove == 'papier'){
-    printMessage('Ty wygrywasz!');
+    printMessage(win);
 } else if( computerMove == 'kamień' && playerMove == 'nożyce'){
-    printMessage('Tym razem przegrywasz :(');
+    printMessage(loss);
 } else if( computerMove == 'kamień' && playerMove == 'kamień'){
-    printMessage('Remis');
-}
-if( computerMove == 'papier' && playerMove == 'papier'){
-    printMessage('Remis');
+    printMessage(draw);
+} else if( computerMove == 'papier' && playerMove == 'papier'){
+    printMessage(draw);
 } else if( computerMove == 'papier' && playerMove == 'nożyce'){
-    printMessage('Ty wygrywasz!');
+    printMessage(win);
 } else if( computerMove == 'papier' && playerMove == 'kamień'){
-    printMessage('Tym razem przegrywasz :(');
-}
-if( computerMove == 'nożyce' && playerMove == 'papier'){
-    printMessage('Tym razem przegrywasz :(');
+    printMessage(loss);
+} else if( computerMove == 'nożyce' && playerMove == 'papier'){
+    printMessage(loss);
 } else if( computerMove == 'nożyce' && playerMove == 'nożyce'){
-    printMessage('Remis');
+    printMessage(draw);
 } else if( computerMove == 'nożyce' && playerMove == 'kamień'){
-    printMessage('Ty wygrywasz!');
-}
-if(playerMove == 'nieznany ruch'){
+    printMessage(win);
+} else if(playerMove == 'nieznany ruch'){
     printMessage('Wpisz poprawną liczbę z zakresu 1-3');
 }
