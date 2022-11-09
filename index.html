@@ -6,15 +6,46 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
+	<header>
+		<div class="game-title">
+			<h1>Kamień, papier, nożyce</h1>
+		</div>
+	</header>
+	<div class="row">
+		<div class="description-box">
+			<h2>Jak grać?</h2>
+			<p>Grasz przeciwko komputerowi, w każdej rundzie każdy gracz (Ty i komputer) wybieracie jeden z symboli: Kamień, Papier lub Nożyce.</p>
+			<p>Zależnie od wybranych symboli wyłaniany jest zwycięzca.</p>
+			<p>Waga symboli:</p>
+			<ul>
+				<li>Nożyce są silniejsze od papieru, ponieważ go tną.</li>
+				<li>Kamień jest silniejszy od nożyc, ponieważ je tępi.</li>
+				<li>Natomiast papier jest silniejszy od kamienia, ponieważ go owija.</li>
+			</ul>
+			<p>Rozpoczynasz rundę poprzez wybranie odpowiedniego ruchu, klikając w jeden z przycisków: Kamień, Papier lub Nożyce.</p>
+		</div>
+	<div class="game-box">
 		<div id="buttons">
+			<h2>Wybierz swój ruch</h2>
+			<img class="rock" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_38c24349c767.jpg">
 			<button id="play-rock">Kamień</button>
+			<img class="paper" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_349c767ff7a8.jpg">
 			<button id="play-paper">Papier</button>
+			<img class="scissors" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_738db78e54ce.jpg">
 			<button id="play-scissors">Nożyce</button>
 		</div>
+		<hr>
+		<h2>Wynik rundy</h2>
 		<div id="messages"></div>
+		</div>
+
+			<div id="game-result" class="result-box">
+				<h2>Wynik:</h2>
+				</div>
+		
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
+
 </body>
 </html>

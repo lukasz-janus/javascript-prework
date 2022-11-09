@@ -1,3 +1,27 @@
+
+let roundCount = 0;
+
+let div = document.createElement("div");
+div.innerHTML = roundCount;
+
+document.querySelector(".result-box").appendChild(div);
+
+/*document.getElementById('game-result').innerHTML = roundCount;*/
+/*let el = document.createElement("div");
+el.classList.add("element");
+el.innerHTML = roundCount;
+
+let div = document.querySelector(".result-box");
+div.appendChild(el);*/
+
+let playerWin = 0;
+let computerWin = 0;
+
+/*printMessage('Rozegrano:' + roundCount + 'rund');
+printMessage('Gracz:' + playerWin + 'zwycięstw');
+printMessage('Komputer:' + computerWin + 'zwycięstw');*/
+
+
 function playGame(playerInput){
   clearMessages();
   let one = 'kamień';
@@ -30,22 +54,37 @@ function playGame(playerInput){
 
     if(argComputerMove == one && argPlayerMove == two){
       printMessage(win);
+      roundCount++;
+      playerWin++;
     } else if(argComputerMove == one && argPlayerMove == three){
         printMessage(loss);
+        roundCount++;
+        computerWin++;
     } else if(argComputerMove == one && argPlayerMove == one){
         printMessage(draw);
+        roundCount++;
     } else if(argComputerMove == two && argPlayerMove == two){
         printMessage(draw);
+        roundCount++;
     } else if(argComputerMove == two && argPlayerMove == three){
         printMessage(win);
+        roundCount++;
+        playerWin++
     } else if(argComputerMove == two && argPlayerMove == one){
         printMessage(loss);
+        roundCount++;
+        computerWin++;
     } else if(argComputerMove == three && argPlayerMove == two){
         printMessage(loss);
+        roundCount++;
+        computerWin++;
     } else if(argComputerMove == three && argPlayerMove == three){
         printMessage(draw);
+        roundCount++;
     } else if(argComputerMove == three && argPlayerMove == one){
         printMessage(win);
+        roundCount++;
+        playerWin++
     } else if(argComputerMove == unknow){
         printMessage('Wpisz poprawną liczbę z zakresu 1-3');  
     } 
@@ -67,6 +106,10 @@ function playGame(playerInput){
 
   displayResult(computerMove, playerMove);
 
+  console.log(roundCount);
+  console.log(playerWin);
+  console.log(computerWin);
+
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){
@@ -78,3 +121,5 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
+
+
