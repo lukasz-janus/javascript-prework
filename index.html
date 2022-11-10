@@ -24,25 +24,42 @@
 			</ul>
 			<p>Rozpoczynasz rundę poprzez wybranie odpowiedniego ruchu, klikając w jeden z przycisków: Kamień, Papier lub Nożyce.</p>
 		</div>
-	<div class="game-box">
-		<div id="buttons">
-			<h2>Wybierz swój ruch</h2>
-			<img class="rock" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_38c24349c767.jpg">
-			<button id="play-rock">Kamień</button>
-			<img class="paper" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_349c767ff7a8.jpg">
-			<button id="play-paper">Papier</button>
-			<img class="scissors" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_738db78e54ce.jpg">
-			<button id="play-scissors">Nożyce</button>
-		</div>
-		<hr>
-		<h2>Wynik rundy</h2>
-		<div id="messages"></div>
+		<div class="game-box">
+			<div id="buttons">
+				<h2>Wybierz swój ruch</h2>
+				<div class="picture">
+					<img class="rock" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_38c24349c767.jpg">
+				</div>
+				<button id="play-rock">Kamień</button>
+				<div class="picture">
+					<img class="paper" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_349c767ff7a8.jpg">
+				</div>
+				<button id="play-paper">Papier</button>
+				<div class="picture">
+					<img class="scissors" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_738db78e54ce.jpg">
+				</div>
+				<button id="play-scissors">Nożyce</button>
+			</div>
+			<hr>
+			<h2>Wynik rundy</h2>
+			<div id="messages"></div>
 		</div>
 
-			<div id="game-result" class="result-box">
-				<h2>Wynik:</h2>
-				</div>
-		
+		<div class="result-box">
+			<h2>Statystyki</h2>
+			<hr>
+			<h3>Rozegranych rund:</h3>
+			<div id="game-result"></div>
+			<hr>
+			<h3>Ilość wygranych:</h3>
+			<div id="player-win-counter"></div>
+			<hr>
+			<h3>Ilość przegranych:</h3>
+			<div id="player-lose-counter"></div>
+			<div class="restart">
+				<a href="index.html">GRAM OD NOWA</a>
+			</div>
+		</div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

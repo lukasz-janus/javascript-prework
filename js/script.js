@@ -1,26 +1,7 @@
 
 let roundCount = 0;
-
-let div = document.createElement("div");
-div.innerHTML = roundCount;
-
-document.querySelector(".result-box").appendChild(div);
-
-/*document.getElementById('game-result').innerHTML = roundCount;*/
-/*let el = document.createElement("div");
-el.classList.add("element");
-el.innerHTML = roundCount;
-
-let div = document.querySelector(".result-box");
-div.appendChild(el);*/
-
 let playerWin = 0;
 let computerWin = 0;
-
-/*printMessage('Rozegrano:' + roundCount + 'rund');
-printMessage('Gracz:' + playerWin + 'zwycięstw');
-printMessage('Komputer:' + computerWin + 'zwycięstw');*/
-
 
 function playGame(playerInput){
   clearMessages();
@@ -44,9 +25,9 @@ function playGame(playerInput){
     return unknow;
   }
 
-  let win = 'Wynik: Ty wygrywasz!';
-  let draw = 'Wynik: Remis';
-  let loss = 'Wynik: Tym razem przegrywasz';
+  let win = 'WYGRANA';
+  let draw = 'REMIS';
+  let loss = 'PRZEGRANA';
 
   function displayResult(argComputerMove, argPlayerMove){
     console.log('wywołano displayResult');
@@ -96,20 +77,25 @@ function playGame(playerInput){
 
   let computerMove = getMoveName(randomNumber);
 
-  printMessage('Twój przeciwnik wybrał: ' + computerMove);
+  printMessage(computerMove);
 
   console.log('Gracz wpisał: ' + playerInput);
 
+  printMessage('VS');
+
   let playerMove = getMoveName(playerInput);
 
-  printMessage('Twój ruch to: ' + playerMove);
+  printMessage(playerMove);
 
   displayResult(computerMove, playerMove);
 
-  console.log(roundCount);
-  console.log(playerWin);
-  console.log(computerWin);
+  console.log('Ilość rozegranych rund: ' + roundCount);
+  console.log('Ilość zwycięstw gracza: ' + playerWin);
+  console.log('Ilość zwycięstw komputera ' +computerWin);
 
+  document.getElementById('game-result').innerHTML = roundCount;
+  document.getElementById('player-win-counter').innerHTML = playerWin;
+  document.getElementById('player-lose-counter').innerHTML = computerWin;
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){

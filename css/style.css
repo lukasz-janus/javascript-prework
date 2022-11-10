@@ -1,3 +1,218 @@
-body{background:url("https://szaloneliczby.pl/wp-content/uploads/2015/11/papier-kamien-nozyce.jpg");background-size:400px 300px;-o-object-fit:cover;object-fit:cover;box-sizing:border-box;overflow:hidden;font-family:sans-serif}.game-title{margin:20px 400px;background:#00008b;text-align:center;height:100px}.game-title h1{font-size:36px;font-weight:bold;color:#fff;padding-top:25px}.row{display:flex;justify-content:space-between;align-items:center;height:80vh;gap:20px}.description-box{background:#ff008c;flex:1;height:500px;padding-left:40px;padding-top:30px;box-shadow:8px 8px 24px 0px #42445a;border-radius:20%;font-size:18px}.game-box{background:#00008b;flex:1;height:500px;text-align:center;padding-top:30px;box-shadow:8px 8px 24px 0px #42445a;border-radius:20%}.game-box h2{color:#fff;padding-bottom:10px;text-transform:uppercase}.result-box{background:#dbdb0b;flex:1;height:500px;text-align:center;padding-top:30px;box-shadow:8px 8px 24px 0px #42445a;border-radius:20%}#buttons{height:40%;position:relative;padding:10px 0 20px 0}#messages{height:50%;font-size:26px;line-height:1.8;color:#d6eef0}button{background-color:#fae842;border:none;color:#000;text-align:center;text-decoration:none;display:inline-block;font-size:20px;font-weight:600;margin:auto 20px;width:100px;height:100px}.row h2{text-align:center}#play-rock{position:absolute;z-index:1;left:1%}#play-paper{position:absolute;z-index:1;left:38%}#play-scissors{position:absolute;z-index:1;right:1%}#buttons img{width:100px;height:100px;margin:auto 20px;position:absolute;z-index:2}#buttons .rock{left:1%}#buttons .paper{left:38%}#buttons .scissors{right:1%}.game-box img:hover{display:none}
+body {
+  background: url("https://szaloneliczby.pl/wp-content/uploads/2015/11/papier-kamien-nozyce.jpg");
+  background-size: 400px 300px;
+  object-fit: cover;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: sans-serif;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxLQUFLLDhGQUE4RixDQUFDLDJCQUEyQixDQUFDLG1CQUFnQixDQUFoQixnQkFBZ0IsQ0FBQyxxQkFBcUIsQ0FBQyxlQUFlLENBQUMsc0JBQXNCLENBQUMsWUFBWSxpQkFBaUIsQ0FBQyxrQkFBa0IsQ0FBQyxpQkFBaUIsQ0FBQyxZQUFZLENBQUMsZUFBZSxjQUFjLENBQUMsZ0JBQWdCLENBQUMsVUFBVSxDQUFDLGdCQUFnQixDQUFDLEtBQUssWUFBWSxDQUFDLDZCQUE2QixDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxRQUFRLENBQUMsaUJBQWlCLGtCQUFrQixDQUFDLE1BQU0sQ0FBQyxZQUFZLENBQUMsaUJBQWlCLENBQUMsZ0JBQWdCLENBQUMsbUNBQW1DLENBQUMsaUJBQWlCLENBQUMsY0FBYyxDQUFDLFVBQVUsa0JBQWtCLENBQUMsTUFBTSxDQUFDLFlBQVksQ0FBQyxpQkFBaUIsQ0FBQyxnQkFBZ0IsQ0FBQyxtQ0FBbUMsQ0FBQyxpQkFBaUIsQ0FBQyxhQUFhLFVBQVUsQ0FBQyxtQkFBbUIsQ0FBQyx3QkFBd0IsQ0FBQyxZQUFZLGtCQUFrQixDQUFDLE1BQU0sQ0FBQyxZQUFZLENBQUMsaUJBQWlCLENBQUMsZ0JBQWdCLENBQUMsbUNBQW1DLENBQUMsaUJBQWlCLENBQUMsU0FBUyxVQUFVLENBQUMsaUJBQWlCLENBQUMscUJBQXFCLENBQUMsVUFBVSxVQUFVLENBQUMsY0FBYyxDQUFDLGVBQWUsQ0FBQyxhQUFhLENBQUMsT0FBTyx3QkFBd0IsQ0FBQyxXQUFXLENBQUMsVUFBVSxDQUFDLGlCQUFpQixDQUFDLG9CQUFvQixDQUFDLG9CQUFvQixDQUFDLGNBQWMsQ0FBQyxlQUFlLENBQUMsZ0JBQWdCLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxRQUFRLGlCQUFpQixDQUFDLFdBQVcsaUJBQWlCLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQyxZQUFZLGlCQUFpQixDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsZUFBZSxpQkFBaUIsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLGFBQWEsV0FBVyxDQUFDLFlBQVksQ0FBQyxnQkFBZ0IsQ0FBQyxpQkFBaUIsQ0FBQyxTQUFTLENBQUMsZUFBZSxPQUFPLENBQUMsZ0JBQWdCLFFBQVEsQ0FBQyxtQkFBbUIsUUFBUSxDQUFDLG9CQUFvQixZQUFZIiwiZmlsZSI6InN0eWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbImJvZHl7YmFja2dyb3VuZDp1cmwoXCJodHRwczovL3N6YWxvbmVsaWN6YnkucGwvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcGFwaWVyLWthbWllbi1ub3p5Y2UuanBnXCIpO2JhY2tncm91bmQtc2l6ZTo0MDBweCAzMDBweDtvYmplY3QtZml0OmNvdmVyO2JveC1zaXppbmc6Ym9yZGVyLWJveDtvdmVyZmxvdzpoaWRkZW47Zm9udC1mYW1pbHk6c2Fucy1zZXJpZn0uZ2FtZS10aXRsZXttYXJnaW46MjBweCA0MDBweDtiYWNrZ3JvdW5kOiMwMDAwOGI7dGV4dC1hbGlnbjpjZW50ZXI7aGVpZ2h0OjEwMHB4fS5nYW1lLXRpdGxlIGgxe2ZvbnQtc2l6ZTozNnB4O2ZvbnQtd2VpZ2h0OmJvbGQ7Y29sb3I6I2ZmZjtwYWRkaW5nLXRvcDoyNXB4fS5yb3d7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2FsaWduLWl0ZW1zOmNlbnRlcjtoZWlnaHQ6ODB2aDtnYXA6MjBweH0uZGVzY3JpcHRpb24tYm94e2JhY2tncm91bmQ6I2ZmMDA4YztmbGV4OjE7aGVpZ2h0OjUwMHB4O3BhZGRpbmctbGVmdDo0MHB4O3BhZGRpbmctdG9wOjMwcHg7Ym94LXNoYWRvdzo4cHggOHB4IDI0cHggMHB4ICM0MjQ0NWE7Ym9yZGVyLXJhZGl1czoyMCU7Zm9udC1zaXplOjE4cHh9LmdhbWUtYm94e2JhY2tncm91bmQ6IzAwMDA4YjtmbGV4OjE7aGVpZ2h0OjUwMHB4O3RleHQtYWxpZ246Y2VudGVyO3BhZGRpbmctdG9wOjMwcHg7Ym94LXNoYWRvdzo4cHggOHB4IDI0cHggMHB4ICM0MjQ0NWE7Ym9yZGVyLXJhZGl1czoyMCV9LmdhbWUtYm94IGgye2NvbG9yOiNmZmY7cGFkZGluZy1ib3R0b206MTBweDt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2V9LnJlc3VsdC1ib3h7YmFja2dyb3VuZDojZGJkYjBiO2ZsZXg6MTtoZWlnaHQ6NTAwcHg7dGV4dC1hbGlnbjpjZW50ZXI7cGFkZGluZy10b3A6MzBweDtib3gtc2hhZG93OjhweCA4cHggMjRweCAwcHggIzQyNDQ1YTtib3JkZXItcmFkaXVzOjIwJX0jYnV0dG9uc3toZWlnaHQ6NDAlO3Bvc2l0aW9uOnJlbGF0aXZlO3BhZGRpbmc6MTBweCAwIDIwcHggMH0jbWVzc2FnZXN7aGVpZ2h0OjUwJTtmb250LXNpemU6MjZweDtsaW5lLWhlaWdodDoxLjg7Y29sb3I6I2Q2ZWVmMH1idXR0b257YmFja2dyb3VuZC1jb2xvcjojZmFlODQyO2JvcmRlcjpub25lO2NvbG9yOiMwMDA7dGV4dC1hbGlnbjpjZW50ZXI7dGV4dC1kZWNvcmF0aW9uOm5vbmU7ZGlzcGxheTppbmxpbmUtYmxvY2s7Zm9udC1zaXplOjIwcHg7Zm9udC13ZWlnaHQ6NjAwO21hcmdpbjphdXRvIDIwcHg7d2lkdGg6MTAwcHg7aGVpZ2h0OjEwMHB4fS5yb3cgaDJ7dGV4dC1hbGlnbjpjZW50ZXJ9I3BsYXktcm9ja3twb3NpdGlvbjphYnNvbHV0ZTt6LWluZGV4OjE7bGVmdDoxJX0jcGxheS1wYXBlcntwb3NpdGlvbjphYnNvbHV0ZTt6LWluZGV4OjE7bGVmdDozOCV9I3BsYXktc2Npc3NvcnN7cG9zaXRpb246YWJzb2x1dGU7ei1pbmRleDoxO3JpZ2h0OjElfSNidXR0b25zIGltZ3t3aWR0aDoxMDBweDtoZWlnaHQ6MTAwcHg7bWFyZ2luOmF1dG8gMjBweDtwb3NpdGlvbjphYnNvbHV0ZTt6LWluZGV4OjJ9I2J1dHRvbnMgLnJvY2t7bGVmdDoxJX0jYnV0dG9ucyAucGFwZXJ7bGVmdDozOCV9I2J1dHRvbnMgLnNjaXNzb3Jze3JpZ2h0OjElfS5nYW1lLWJveCBpbWc6aG92ZXJ7ZGlzcGxheTpub25lfVxuIl19 */
+.game-title {
+  margin: 20px 400px;
+  background: darkblue;
+  text-align: center;
+  height: 100px;
+}
+
+.game-title h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  padding-top: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  gap: 20px;
+}
+
+.description-box {
+  background: rgb(219, 219, 11);
+  flex: 1;
+  height: 500px;
+  padding-left: 40px;
+  padding-top: 30px;
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
+  border-radius: 20%;
+  font-size: 18px;
+}
+
+.game-box {
+  background: darkblue;
+  flex: 1;
+  height: 500px;
+  text-align: center;
+  padding-top: 30px;
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
+  border-radius: 20%;
+}
+
+.game-box h2 {
+  color: #ffffff;
+}
+
+.result-box {
+  background: rgb(219, 219, 11);
+  flex: 1;
+  height: 500px;
+  text-align: center;
+  padding-top: 30px;
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
+  border-radius: 20%;
+}
+
+#buttons {
+  height: 40%;
+  position: relative;
+  padding: 10px 0 20px 0;
+}
+
+#messages {
+  height: 50%;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #d6eef0;
+}
+
+button {
+  background-color: rgb(250, 232, 66);
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto 20px;
+  width: 100px;
+  height: 100px;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+#play-rock {
+  position: absolute;
+  z-index: 1;
+  left: 1%;
+}
+
+#play-paper {
+  position: absolute;
+  z-index: 1;
+  left: 38%;
+}
+
+#play-scissors {
+  position: absolute;
+  z-index: 1;
+  right: 1%;
+}
+
+#buttons img {
+  width: 100px;
+  height: 100px;
+  margin: auto 20px;
+  position: absolute;
+  z-index: 2;
+}
+
+#buttons .rock {
+  left: 1%;
+}
+
+#buttons .paper {
+  left: 38%;
+}
+
+#buttons .scissors {
+  right: 1%;
+}
+
+.game-box .picture:hover {
+  display: none;
+}
+
+.result-box div {
+  height: 40px;
+}
+
+.restart a {
+  text-decoration: none;
+  padding: 20px 20px;
+  background: darkblue;
+  color: #ffffff;
+  border: 2px solid black;
+}
+
+.result-box .restart {
+  margin-top: 30px;
+}
+
+#game-result {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#player-win-counter {
+  font-size: 24px;
+  font-weight: 400;
+  color: green;
+}
+
+#player-lose-counter {
+  font-size: 24px;
+  font-weight: 400;
+  color: red;
+}
+
+@media (max-width: 997px) {
+  body {
+    overflow: scroll;
+  }
+  .row {
+    flex-direction: column;
+    display: flex;
+  }
+  .description-box, .game-box, .result-box {
+    width: 100%;
+    border-radius: 0%;
+    position: relative;
+    flex: 1;
+  }
+  .description-box {
+    padding-left: 0;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  .description-box p {
+    margin: 0 10px;
+  }
+  .game-box {
+    padding: 50px 0;
+  }
+  #buttons {
+    height: 30%;
+    padding-bottom: 150px;
+  }
+  #messages {
+    height: 30%;
+    padding-bottom: 200px;
+  }
+  .game-title {
+    margin: 0 auto;
+    height: 80px;
+  }
+  .game-title h1 {
+    font-size: 28px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
