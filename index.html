@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Kamień, papier, nożyce</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<header>
-		<div class="game-title">
-			<h1>Kamień, papier, nożyce</h1>
-		</div>
-	</header>
-	<div class="row">
-		<div class="description-box">
-			<h2>Jak grać?</h2>
-			<p>Grasz przeciwko komputerowi, w każdej rundzie każdy gracz (Ty i komputer) wybieracie jeden z symboli: Kamień, Papier lub Nożyce.</p>
-			<p>Zależnie od wybranych symboli wyłaniany jest zwycięzca.</p>
-			<p>Waga symboli:</p>
-			<ul>
-				<li>Nożyce są silniejsze od papieru, ponieważ go tną.</li>
-				<li>Kamień jest silniejszy od nożyc, ponieważ je tępi.</li>
-				<li>Natomiast papier jest silniejszy od kamienia, ponieważ go owija.</li>
-			</ul>
-			<p>Rozpoczynasz rundę poprzez wybranie odpowiedniego ruchu, klikając w jeden z przycisków: Kamień, Papier lub Nożyce.</p>
-		</div>
-		<div class="game-box">
-			<div id="buttons">
-				<h2>Wybierz swój ruch</h2>
-				<div class="picture">
-					<img class="rock" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_38c24349c767.jpg">
-				</div>
-				<button id="play-rock">Kamień</button>
-				<div class="picture">
-					<img class="paper" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_349c767ff7a8.jpg">
-				</div>
-				<button id="play-paper">Papier</button>
-				<div class="picture">
-					<img class="scissors" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_738db78e54ce.jpg">
-				</div>
-				<button id="play-scissors">Nożyce</button>
+	<head>
+		<meta charset="UTF-8">
+		<title>Kamień, papier, nożyce</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<div class="game-title">
+				<h1>Kamień, papier, nożyce</h1>
 			</div>
-			<hr>
-			<h2>Wynik rundy</h2>
-			<div id="messages"></div>
-		</div>
-
-		<div class="result-box">
-			<h2>Statystyki</h2>
-			<hr>
-			<h3>Rozegranych rund:</h3>
-			<div id="game-result"></div>
-			<hr>
-			<h3>Ilość wygranych:</h3>
-			<div id="player-win-counter"></div>
-			<hr>
-			<h3>Ilość przegranych:</h3>
-			<div id="player-lose-counter"></div>
-			<div class="restart">
-				<a href="index.html">GRAM OD NOWA</a>
+		</header>
+		<div class="row">
+			<div class="description-box">
+				<h2>Jak grać ?</h2>
+				<hr>
+				<p>Grasz przeciwko komputerowi, w każdej rundzie każdy gracz (Ty i komputer) wybieracie jeden z symboli: Kamień, Papier lub Nożyce.</p>
+				<hr>
+				<p>Zależnie od wybranych symboli wyłaniany jest zwycięzca.</p>
+				<p>Waga symboli:</p>
+				<ul>
+					<li>Nożyce są silniejsze od papieru, ponieważ go tną.</li>
+					<li>Kamień jest silniejszy od nożyc, ponieważ je tępi.</li>
+					<li>Natomiast papier jest silniejszy od kamienia, ponieważ go owija.</li>
+				</ul>
+				<hr>
+				<p>Rozpoczynasz rundę poprzez wybranie odpowiedniego ruchu, klikając w jeden z przycisków: Kamień, Papier lub Nożyce.</p>
+			</div>
+			<div class="game-box">
+				<div id="buttons">
+					<h2>Wybierz swój ruch</h2>
+					<button type="submit" id="play-rock">
+						<img class="rock" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_38c24349c767.jpg" title="rock" alt="rock-button">
+					</button>		
+					<button type="submit" id="play-paper">
+						<img class="paper" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_349c767ff7a8.jpg" title="paper" alt="paper-button">
+					</button>
+					<button type="submit" id="play-scissors">
+						<img class="scissors" src="https://samequizy.pl/wp-content/uploads/2018/10/filing_images_738db78e54ce.jpg" title="scissors" alt="scrissors-button">
+					</button>
+				</div>
+				<hr>
+				<h2>Wynik rundy</h2>
+				<div id="messages"></div>
+			</div>
+			<div class="result-box">
+				<h2>Statystyki</h2>
+				<hr>
+				<h3>Rozegranych rund:</h3>
+				<div id="game-result"></div>
+				<hr>
+				<h3>Ilość wygranych:</h3>
+				<div id="player-win-counter"></div>
+				<hr>
+				<h3>Ilość przegranych:</h3>
+				<div id="player-lose-counter"></div>
+				<div class="restart">
+					<a href="index.html">RESET</a>
+				</div>
 			</div>
 		</div>
-	</div>
-	<script src="js/functions.js"></script>
-	<script src="js/script.js"></script>
-
-</body>
+		<script src="js/functions.js"></script>
+		<script src="js/script.js"></script>
+	</body>
 </html>
