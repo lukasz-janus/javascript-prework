@@ -1,14 +1,12 @@
 
+{
 let roundCount = 0;
 let playerWin = 0;
 let computerWin = 0;
 
 function playGame(playerInput){
   clearMessages();
-  let one = 'kamień';
-  let two = 'papier';
-  let three = 'nożyce';
-  let unknow = 'Nieznany ruch';
+
 
   function getMoveName(argMoveId){
     console.log('wywołano getMoveName');
@@ -25,9 +23,9 @@ function playGame(playerInput){
     return unknow;
   }
 
-  let win = 'WYGRANA';
-  let draw = 'REMIS';
-  let loss = 'PRZEGRANA';
+  const win = 'WYGRANA';
+  const draw = 'REMIS';
+  const loss = 'PRZEGRANA';
 
   function displayResult(argComputerMove, argPlayerMove){
     console.log('wywołano displayResult');
@@ -71,21 +69,21 @@ function playGame(playerInput){
     } 
   }
 
+  const one = 'kamień';
+  const two = 'papier';
+  const three = 'nożyce';
+  const unknow = 'Nieznany ruch';
+  
   let randomNumber = Math.floor(Math.random() * 3 + 1);
-
   console.log('Wylosowana liczba to: ' + randomNumber);
 
   let computerMove = getMoveName(randomNumber);
-
   printMessage(computerMove);
-
-  console.log('Gracz wpisał: ' + playerInput);
-
   printMessage('VS');
-
+  
   let playerMove = getMoveName(playerInput);
-
   printMessage(playerMove);
+  console.log('Gracz wpisał: ' + playerInput);
 
   displayResult(computerMove, playerMove);
 
@@ -108,4 +106,4 @@ document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
 
-
+}
