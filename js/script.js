@@ -4,7 +4,7 @@
   let playerWin = 0;
   let computerWin = 0;
 
-  let playGame = function(playerInput){
+  const playGame = function(playerInput){
     clearMessages();
 
     const getMoveName = function(argMoveId){
@@ -17,7 +17,8 @@
       } else if(argMoveId == 3){
         return three;
       }
-      return argMoveId;
+      printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+      return unknow;
     }
 
     const win = 'WYGRANA';
@@ -63,7 +64,9 @@
           playerWin++
       } else if(argComputerMove == unknow){
           printMessage('Wpisz poprawną liczbę z zakresu 1-3');  
-      } 
+      } else {
+        printMessage('Wystąpił błąd. Spróbuj jeszcze raz.');
+      }
     }
 
     const one = 'kamień';
@@ -91,8 +94,6 @@
     document.getElementById('game-result').innerHTML = roundCount;
     document.getElementById('player-win-counter').innerHTML = playerWin;
     document.getElementById('player-lose-counter').innerHTML = computerWin;
-    
-    return playerInput;
   }
 
   document.getElementById('play-rock').addEventListener('click', function(){
