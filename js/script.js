@@ -4,11 +4,10 @@ let roundCount = 0;
 let playerWin = 0;
 let computerWin = 0;
 
-function playGame(playerInput){
+let playGame = function(playerInput){
   clearMessages();
 
-
-  function getMoveName(argMoveId){
+  let getMoveName = function(argMoveId){
     console.log('wywołano getMoveName');
 
     if(argMoveId == 1){
@@ -19,6 +18,8 @@ function playGame(playerInput){
       return three;
     }
 
+    return argMoveId;
+
     printMessage('Nie znam ruchu o id ' + argMoveId + '.');
     return unknow;
   }
@@ -27,7 +28,7 @@ function playGame(playerInput){
   const draw = 'REMIS';
   const loss = 'PRZEGRANA';
 
-  function displayResult(argComputerMove, argPlayerMove){
+  let displayResult = function(argComputerMove, argPlayerMove){
     console.log('wywołano displayResult');
     console.log('moves:', argComputerMove, argPlayerMove);
 
@@ -67,6 +68,7 @@ function playGame(playerInput){
     } else if(argComputerMove == unknow){
         printMessage('Wpisz poprawną liczbę z zakresu 1-3');  
     } 
+    return argComputerMove, argPlayerMove;
   }
 
   const one = 'kamień';
@@ -94,6 +96,8 @@ function playGame(playerInput){
   document.getElementById('game-result').innerHTML = roundCount;
   document.getElementById('player-win-counter').innerHTML = playerWin;
   document.getElementById('player-lose-counter').innerHTML = computerWin;
+  
+  return playerInput;
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){
